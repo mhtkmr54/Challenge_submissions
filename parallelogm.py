@@ -16,22 +16,20 @@ def check_para(coords):
    cb =  map(lambda x: x * -1, bc)
 
   # 3 cases if parallelogram can be picked up out of the plane and turned over
+  # first coordinate is fixed
 
    if ac == bd and ab == cd:
         print "parallelogram exists as given"
-        print "seen clockwise from first coordinate ",p[0],p[1],p[3],p[2]
-        print "seen anti-clockwise from first coordinate ",p[0],p[2],p[3],p[1]
+        print "order after fixing first coordinate ",p[0],p[1],p[3],p[2]
    
    elif  ac == db and ad == cb:
         print "parallelogram exists as given"
-        print "seen clockwise from first coordinate ",p[0],p[2],p[1],p[3]
-        print "seen anti-clockwise from first coordinate ",p[0],p[3],p[1],p[2]
+        print "order after fixing first coordinate ",p[0],p[3],p[1],p[2]
 
    
    elif ad == bc and ab == dc:
         print "parallelogram exists as given"
-        print "seen clockwise from first coordinate ",p[0],p[3],p[2],p[1]
-        print "seen anti-clockwise from first coordinate ",p[0],p[1],p[2],p[3]
+        print "order after fixing first coordinate ",p[0],p[1],p[2],p[3]
 
         
    else:
