@@ -1,11 +1,14 @@
 import sys,re
 p = []
-#(0,0), (1,1), (3,1), (0,2)   
+#(0,0), (1,1), (3,1), (0,2)
+#(-3,1), (4,3) ,(-4,-5), (3,-3)   
 def check_para(coords):
+   print coords
    for i in  coords:
      z = map(int,i)
      p.append(z)
    count = 0 
+   print p
    ac = [p[2][0]-p[0][0],p[2][1]-p[0][1]]
    bd = [p[3][0]-p[1][0],p[3][1]-p[1][1]]
    db =  map(lambda x: x * -1, bd)
@@ -44,7 +47,7 @@ def check_para(coords):
 def main():
     print "your input format -- (0,0), (0,1), (1,0), (1,1)"
     tc=raw_input(">>")
-    r = re.compile(r"([0-9,]+[0-9])+")
+    r = re.compile(r"(-?[0-9,]+-?[0-9])+")
     coord = re.findall(r,tc)
     coords = []
     for i in coord:
