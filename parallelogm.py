@@ -1,6 +1,6 @@
 import sys,re
 p = []
-
+#(0,0), (1,1), (3,1), (0,2)   
 def check_para(coords):
    for i in  coords:
      z = map(int,i)
@@ -14,11 +14,13 @@ def check_para(coords):
    ad = [p[3][0]-p[0][0],p[3][1]-p[0][1]]
    bc = [p[2][0]-p[1][0],p[2][1]-p[1][1]]
    cb =  map(lambda x: x * -1, bc)
+   dc =  map(lambda x: x * -1, cd)
+
 
   # 3 cases if parallelogram can be picked up out of the plane and turned over
   # first coordinate is fixed
 
-   if ac == bd and ab == cd:
+   if ac == bd and  ab == cd:
         print "parallelogram exists as given"
         print "order after fixing first coordinate ",p[0],p[1],p[3],p[2]
    
@@ -27,7 +29,7 @@ def check_para(coords):
         print "order after fixing first coordinate ",p[0],p[3],p[1],p[2]
 
    
-   elif ad == bc and ab == dc:
+   elif ad == bc and  ab == dc:
         print "parallelogram exists as given"
         print "order after fixing first coordinate ",p[0],p[1],p[2],p[3]
 
